@@ -1,0 +1,141 @@
+\documentclass[t,]{beamer}
+
+%----------------------------------------------------------------
+% Preamble
+%----------------------------------------------------------------
+\input{preamble.tex}
+
+%----------------------------------------------------------------
+% Title page settings
+%----------------------------------------------------------------
+\title[Short Title]{Full Title}
+\subtitle{Subtitle}
+\author{\href{mailto:froembgen@thch.uni-bonn.de}{Tom Frömbgen}}
+\institute{Mulliken Center for Theoretical Chemistry, University of Bonn 
+\and
+International Max Planck Research School on Reactive Structure Analysis for Chemical Reactions}
+\date{\today}
+
+\pgfdeclareimage[height=\paperheight]{UBBackground}{../figures/UBBackground.png}
+\pgfdeclareimage[height=1.5cm]{logo_mctc_full}{../figures/logo_mctc.png}
+\pgfdeclareimage[height=1.5cm]{logo_mctc_squared}{../figures/logo_mctc_squared.png}
+\pgfdeclareimage[height=1.5cm]{logo_imprs_recharge}{../figures/logo_imprs_recharge.png}
+
+%-------------------------------------------------------------------------------
+%------------------------------- DOCUMENT --------------------------------------
+%-------------------------------------------------------------------------------
+\begin{document}
+
+%-------------------------------------------------------------------------------
+% 	Title page
+%-------------------------------------------------------------------------------
+\begin{frame}[noframenumbering,plain]
+	% Set background image.
+	\begin{tikzpicture}[remember picture, overlay]%
+		\node[anchor=south east, xshift=1.25mm, yshift=-1.25mm] at (current page.south east) {\pgfuseimage{UBBackground}};
+		\node[anchor=north west, xshift=1.mm, yshift=-1.mm] at (current page.north west) {\pgfuseimage{logo_mctc_squared}};
+		\node[anchor=north west, xshift=25.mm, yshift=-1.mm] at (current page.north west) {\pgfuseimage{logo_imprs_recharge}};
+	\end{tikzpicture}%
+	% Set title page.
+	\begin{minipage}{0.56\textwidth}
+
+		\begin{center}
+
+			\vspace{2cm}
+
+			\begin{LARGE}
+				\usebeamercolor[fg]{title}\inserttitle
+			\end{LARGE}
+
+			\vspace{0.5cm}
+
+			\begin{large}
+				\usebeamercolor[fg]{author}\insertauthor
+			\end{large}
+
+			\vspace{0.5cm}
+
+			\begin{footnotesize}
+				\textit{\insertinstitute}
+			\end{footnotesize}
+
+			\vspace{0.5cm}
+
+			\begin{large}
+				\usebeamercolor[fg]{subtitle}\insertsubtitle
+			\end{large}
+
+			\vspace{0.5cm}
+			\insertdate
+
+		\end{center}
+	\end{minipage}
+
+\end{frame}
+
+
+\begin{frame}[t,noframenumbering,plain]{Overview}
+	\tableofcontents
+\end{frame}
+
+\section{Hello}
+\subsection{Hi}
+
+\begin{frame}
+	\frametitle{This is a test}
+
+	I bims, 1 Tom
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%   Acknowledgements
+%-------------------------------------------------------------------------------
+\begin{frame}[noframenumbering, plain]
+	\frametitle{Acknowledgements}
+
+	\begin{itemize}
+		\item International Max Planck Research School on Reactive Structure Analysis for Chemical Reactions (IMPRS-RECHARGE)
+		\item Kirchner group at MCTC
+	\end{itemize}
+
+
+	\begin{center}
+		\includegraphics[width=.7\textwidth]{kirchner-group.jpg}
+	\end{center}
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%   Last frame
+%-------------------------------------------------------------------------------
+\begin{frame}[noframenumbering,plain]
+	% Set background image.
+	\begin{tikzpicture}[remember picture, overlay]%
+		\node[anchor=south east, xshift=1.25mm, yshift=-1.25mm] at (current page.south east) {\pgfuseimage{UBBackground}};
+		\node[anchor=north west, xshift=1.mm, yshift=-1.mm] at (current page.north west) {\pgfuseimage{logo_mctc_squared}};
+		\node[anchor=north west, xshift=25.mm, yshift=-1.mm] at (current page.north west) {\pgfuseimage{logo_imprs_recharge}};
+	\end{tikzpicture}%
+	% Set title page.
+	\begin{minipage}{0.6\textwidth}
+
+		\begin{center}
+
+			\vspace{3cm}
+
+			\begin{Large}
+				\usebeamercolor[fg]{author}\href{mailto:froembgen@thch.uni-bonn.de}{froembgen@thch.uni-bonn.de}
+			\end{Large}
+
+			\vspace{1.0cm}
+
+			\includegraphics[width=.7\textwidth]{qrcode-TF.png}
+
+		\end{center}
+	\end{minipage}
+
+\end{frame}
+
+
+\end{document}
+%-------------------------------------------------------------------------------
+%------------------------------- END OF DOCUMENT -------------------------------
+%-------------------------------------------------------------------------------

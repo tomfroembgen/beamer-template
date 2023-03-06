@@ -1,0 +1,201 @@
+%-------------------------------------------------------------------------------
+%------------------------------- PREAMBLE --------------------------------------
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+% 	colors
+%-------------------------------------------------------------------------------
+\usepackage{xcolor}
+\definecolor{UBBlue}{cmyk}{1.0,0.7,0,0}
+\definecolor{UBYellow}{cmyk}{0,0.3,1.0,0}
+\definecolor{UBGray}{cmyk}{0,0,0.15,0.55}
+\definecolor{UBBlueRGB}{RGB}{7,82,154}
+\definecolor{UBYellowRGB}{RGB}{255,185,12}
+\definecolor{UBGrayRGB}{RGB}{144,144,133}
+
+
+%-------------------------------------------------------------------------------
+% 	presentation setup
+%-------------------------------------------------------------------------------
+\mode<presentation>
+{
+	\usetheme{Boadilla}
+	\useinnertheme{circles}
+	\useoutertheme[subsection=false]{miniframes}
+	\usecolortheme[named=UBBlue]{structure}
+
+	% Adjust templates.
+	\setbeamertemplate{navigation symbols}{} %Remove navigation symbols
+	\setbeamertemplate{blocks}[rounded][shadow=false] % adjust blocks
+
+	% Adjust colors.
+	\setbeamercolor{author in head/foot}{bg=UBBlue, fg=white}
+	\setbeamercolor{title in head/foot}{bg=UBYellow, fg=black}
+	\setbeamercolor{date in head/foot}{bg=UBGray, fg=white}
+	\setbeamercolor{section in head/foot}{bg=UBBlue, fg=white}
+	\setbeamercolor{subsection in head/foot}{bg=UBBlue, fg=white}
+	\setbeamercolor{title}{fg=UBBlue}
+	\setbeamercolor{subtitle}{fg=UBBlue}
+	\setbeamercolor{institute}{fg=UBGray}
+	\setbeamercolor{author}{fg=UBBlue}
+	\setbeamercolor{date}{fg=UBGray}
+	\setbeamercolor{frametitle}{fg=black}
+	\setbeamercolor{alerted text}{fg=UBBlue}
+	\setbeamercolor{footnote mark}{fg=UBBlue}
+	\setbeamercolor{footnote}{fg=UBBlue}
+	\setbeamercolor{block title}{fg=black, bg=UBYellow}
+	\setbeamercolor{block body}{fg=black, bg=UBGray!15}
+
+	% Adjust page titles.
+	\setbeamertemplate{frametitle}{%
+		\vspace{3pt}%
+		\parbox[c][0.5cm][b]{\textwidth}{%
+			\usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle%
+			\hfill%
+			%\includegraphics[width=0.08\textwidth]{logo_mctc_squared.png}
+		}
+	}
+
+	% Adjust footline.
+	\setbeamertemplate{footline}
+	{
+		\hbox{%
+			\begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.5ex,dp=1.0ex,center]{author in head/foot}%
+				\usebeamerfont{author in head/foot}\insertshortauthor
+			\end{beamercolorbox}%
+			\begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.5ex,dp=1.0ex,center]{title in head/foot}%
+				\usebeamerfont{title in head/foot}\insertshorttitle
+			\end{beamercolorbox}%
+			\begin{beamercolorbox}[wd=.283333\paperwidth,ht=2.5ex,dp=1.0ex,center]{date in head/foot}%
+				\usebeamerfont{date in head/foot}\insertshortdate{}
+			\end{beamercolorbox}%
+			\begin{beamercolorbox}[wd=.05\paperwidth,ht=2.5ex,dp=1.0ex,right]{date in head/foot}%
+				\usebeamerfont{date in head/foot}\insertframenumber{}\hspace*{2ex}
+			\end{beamercolorbox}}%
+		\vskip0pt%
+	}
+
+	% Adjust fonts.
+	\setbeamerfont{footnote}{size=\tiny}
+	\setbeamerfont{date in head/foot}{size=\tiny}
+	\setbeamerfont{title in head/foot}{size=\tiny}
+	\setbeamerfont{author in head/foot}{size=\tiny}
+}
+
+
+%-------------------------------------------------------------------------------
+% 	layout, geometry
+%-------------------------------------------------------------------------------
+%\usepackage{enumitem}
+%\setlist[itemize]{leftmargin=10pt}
+\usepackage[absolute,overlay]{textpos}
+
+\usepackage[%
+	activate={true,nocompatibility}, % activate protrusion and expansion
+	final, % enable microtype
+	tracking=true,
+	kerning=true,
+	spacing=true,
+	factor=1100, % add 10% to the protrusion amount (default is 1000)
+	stretch=10, % 
+	shrink=10, % reduce stretchability/shrinkability (default is 20/20)
+]{microtype}
+
+\SetExtraKerning[unit=space]{%
+encoding={*},
+family={*},
+series={*},
+size={footnotesize,small,normalsize,scriptsize}}{
+"28={ ,150}, % left bracket, add space from right
+"29={150, }, % right bracket, add space from left
+\textquotedblleft={ ,150}, % left quotation mark, space from right
+\textquotedblright={150, } % right quotation mark, space from left
+}
+\SetTracking{encoding={*}, shape=sc}{40} % correct spacing for \textsc{}
+
+\usepackage{layouts}          % for printing page width:
+% textwidth in inches: \printinunitsof{in}\prntlen{\textwidth}
+
+
+%-------------------------------------------------------------------------------
+% 	language and time
+%-------------------------------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}\DeclareUnicodeCharacter{2212}{-}
+\usepackage[american]{babel}
+\microtypecontext{spacing=nonfrench} % extra space at end of sentence -> english
+\usepackage[ddmmyyyy]{datetime}
+\usepackage{bookmark}
+
+%-------------------------------------------------------------------------------
+% 	font
+%-------------------------------------------------------------------------------
+\usepackage{lmodern}			% use lmodern font
+
+%-------------------------------------------------------------------------------
+% 	tables
+%-------------------------------------------------------------------------------
+\usepackage{tabularx}					% table with flexible column width
+\usepackage{booktabs}                   % horizontal lines
+\usepackage{float} 						% table placement
+\usepackage{multirow} 					% multirow table
+
+%-------------------------------------------------------------------------------
+% 	figure, graphics
+%-------------------------------------------------------------------------------
+\usepackage[%
+	singlelinecheck=true,
+	justification=justified,
+	format=plain,
+	font=small,
+	labelfont=it
+]{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\setbeamertemplate{caption}[numbered]
+\graphicspath{{../figures/}}
+
+\usepackage{tikz}
+
+%-------------------------------------------------------------------------------
+% 	math
+%-------------------------------------------------------------------------------
+\usepackage{amsmath,amsfonts,amsthm,amssymb,amstext}
+\usepackage[]{sansmath}                   % for math fonts in sans serif
+\usepackage{siunitx}
+\sisetup{%
+detect-all,                             % alle äußeren Schriftkonventionen übernehmen
+per-mode=fraction,                      % \per creates fraction
+output-decimal-marker={.},              % decimal symbol 
+unit-mode=text,                         % Einheiten im Textmodus
+separate-uncertainty=true,              % von/bis oder \pm haben beide Einheit nach Zahl
+range-phrase=\ {\text{\textendash}}\ ,  % range denoted with endash (note spacing)
+range-units=single,                     % range has only one unit
+exponent-product=\cdot,                 % use \cdot: \SI{6,626E-34}{\joule\second}
+output-product=\cdot                    % use \cdot: \SI{6,626E-34}{\joule\second}
+}
+\DeclareSIUnit{\calorie}{cal}
+\DeclareSIUnit{\ppm}{ppm}
+\DeclareSIUnit{\kcal}{\kilo\calorie}
+
+
+%-------------------------------------------------------------------------------
+% 	bibliography, citation, links
+%-------------------------------------------------------------------------------
+\usepackage[style=english]{csquotes} % required by biblatex.sty
+\usepackage[backend=biber,style=chem-angew,maxbibnames=10,sorting=none]{biblatex}
+\addbibresource{bib.bib}
+
+
+
+
+%-------------------------------------------------------------------------------
+%   miscellaneous
+%-------------------------------------------------------------------------------
+\newcommand{\boltz}{k_{\mathrm{B}}}             % Boltzmann constant
+\usepackage{lipsum}
+
+
+%-------------------------------------------------------------------------------
+%------------------------------- END OF PREAMBLE -------------------------------
+%-------------------------------------------------------------------------------
