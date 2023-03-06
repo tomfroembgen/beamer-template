@@ -1,6 +1,8 @@
 # Things added by Tom
 .vscode/
 .ibynb_checkpoints
+old-figures/
+notebooks/
 
 # exceptions have to be put to the End of this file. Otherwise they might be overridden by following ignore commands!
 
