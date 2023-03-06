@@ -113,7 +113,7 @@ size={footnotesize,small,normalsize,scriptsize}}{
 }
 \SetTracking{encoding={*}, shape=sc}{40} % correct spacing for \textsc{}
 
-\usepackage{layouts}          % for printing page width:
+% \usepackage{layouts}          % for printing page width:
 % textwidth in inches: \printinunitsof{in}\prntlen{\textwidth}
 
 
@@ -153,7 +153,7 @@ size={footnotesize,small,normalsize,scriptsize}}{
 \usepackage{subcaption}
 \usepackage{graphicx}
 \setbeamertemplate{caption}[numbered]
-\graphicspath{{../figures/}}
+\graphicspath{{figures/}}
 
 \usepackage{tikz}
 
@@ -172,7 +172,6 @@ separate-uncertainty=true,              % von/bis oder \pm haben beide Einheit n
 range-phrase=\ {\text{\textendash}}\ ,  % range denoted with endash (note spacing)
 range-units=single,                     % range has only one unit
 exponent-product=\cdot,                 % use \cdot: \SI{6,626E-34}{\joule\second}
-output-product=\cdot                    % use \cdot: \SI{6,626E-34}{\joule\second}
 }
 \DeclareSIUnit{\calorie}{cal}
 \DeclareSIUnit{\ppm}{ppm}
@@ -184,7 +183,7 @@ output-product=\cdot                    % use \cdot: \SI{6,626E-34}{\joule\secon
 %-------------------------------------------------------------------------------
 \usepackage[style=english]{csquotes} % required by biblatex.sty
 \usepackage[backend=biber,style=chem-angew,maxbibnames=10,sorting=none]{biblatex}
-\addbibresource{bib.bib}
+\addbibresource{refs.bib}
 
 
 
