@@ -19,10 +19,16 @@ aspectratio=169,			% 16:9 aspect ratio
 International Max Planck Research School on Reactive Structure Analysis for Chemical Reactions}
 \date{\today}
 
+% declare images
+% background image
 \pgfdeclareimage[height=\paperheight]{UBBackground}{figures/UBBackground.png}
-\pgfdeclareimage[height=1.5cm]{logo_mctc_full}{figures/logo_mctc.png}
-\pgfdeclareimage[height=1.5cm]{logo_mctc_squared}{figures/logo_mctc_squared.png}
-\pgfdeclareimage[height=1.5cm]{logo_imprs_recharge}{figures/logo_imprs_recharge.png}
+
+% mctc and uni bonn logo
+\pgfdeclareimage[height=1.5cm]{logo_uni-bonn_mctc}{figures/logo_uni-bonn_mctc.png}
+
+% secondary logo
+% add your logo here
+\pgfdeclareimage[height=1.6cm]{logo_imprs_recharge}{figures/logo_imprs_recharge.png}
 
 %-------------------------------------------------------------------------------
 %------------------------------- DOCUMENT --------------------------------------
@@ -34,10 +40,22 @@ International Max Planck Research School on Reactive Structure Analysis for Chem
 %-------------------------------------------------------------------------------
 \begin{frame}[noframenumbering,plain]
 	% Set background image.
-	\begin{tikzpicture}[remember picture, overlay]%
-		\node[anchor=south east, xshift=1.25mm, yshift=-1.25mm] at (current page.south east) {\pgfuseimage{UBBackground}};
-		\node[anchor=north west, xshift=1.mm, yshift=-1.mm] at (current page.north west) {\pgfuseimage{logo_mctc_squared}};
-		\node[anchor=north west, xshift=25.mm, yshift=-1.mm] at (current page.north west) {\pgfuseimage{logo_imprs_recharge}};
+	\begin{tikzpicture}[remember picture, overlay]
+		%
+		% background image
+		\node[anchor=south east, xshift=1.25mm, yshift=-1.25mm]
+		at (current page.south east) {\pgfuseimage{UBBackground}};
+		%
+		% mctc and uni bonn logo
+		\node[anchor=north west, xshift=60.mm, yshift=-1.mm]
+		at (current page.north west) {\pgfuseimage{logo_uni-bonn_mctc}};
+		%
+		% commment the following lines if you dont want to use the secondary logo
+		%
+		% secondary logo
+		\node[anchor=north west, xshift=0.mm, yshift=0.mm]
+		at (current page.north west) {\pgfuseimage{logo_imprs_recharge}};
+		%
 	\end{tikzpicture}%
 	% Set title page.
 	\begin{minipage}{0.56\textwidth}
@@ -118,14 +136,28 @@ International Max Planck Research School on Reactive Structure Analysis for Chem
 %-------------------------------------------------------------------------------
 %   Last frame
 %-------------------------------------------------------------------------------
+% Give your contact information here
+% You can also add a QR code for your contact information
+%
 \begin{frame}[noframenumbering,plain]
 	% Set background image.
-	\begin{tikzpicture}[remember picture, overlay]%
-		\node[anchor=south east, xshift=1.25mm, yshift=-1.25mm] at (current page.south east) {\pgfuseimage{UBBackground}};
-		\node[anchor=north west, xshift=1.mm, yshift=-1.mm] at (current page.north west) {\pgfuseimage{logo_mctc_squared}};
-		\node[anchor=north west, xshift=25.mm, yshift=-1.mm] at (current page.north west) {\pgfuseimage{logo_imprs_recharge}};
+	\begin{tikzpicture}[remember picture, overlay]
+		%
+		% background image
+		\node[anchor=south east, xshift=1.25mm, yshift=-1.25mm]
+		at (current page.south east) {\pgfuseimage{UBBackground}};
+		%
+		% mctc and uni bonn logo
+		\node[anchor=north west, xshift=60.mm, yshift=-1.mm]
+		at (current page.north west) {\pgfuseimage{logo_uni-bonn_mctc}};
+		%
+		% commment the following lines if you dont want to use the secondary logo
+		%
+		% secondary logo
+		\node[anchor=north west, xshift=0.mm, yshift=0.mm]
+		at (current page.north west) {\pgfuseimage{logo_imprs_recharge}};
+		%
 	\end{tikzpicture}%
-	% Set title page.
 	\begin{minipage}{0.6\textwidth}
 
 		\begin{center}
@@ -138,6 +170,7 @@ International Max Planck Research School on Reactive Structure Analysis for Chem
 
 			\vspace{1.0cm}
 
+			% comment the following line if you dont want to add a QR code
 			\includegraphics[width=.6\textwidth]{qrcode-TF.png}
 
 		\end{center}
